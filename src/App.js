@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  return <div>Our Template</div>;
+  return <div>branch temur</div>;
 }
 
 export default App;
@@ -15,4 +15,5 @@ export default App;
  *
  *
  * (git pull = git fetch + git merge)
+ * Temur branch
  */
