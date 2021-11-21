@@ -1,7 +1,9 @@
 import "./App.css";
+import { Start } from "./components/Start";
+import "./styles/GlobalStyle.css";
 
 function App() {
-  return <div>Our Template</div>;
+  return <Start />;
 }
 
 export default App;
@@ -15,4 +17,6 @@ export default App;
  *
  *
  * (git pull = git fetch + git merge)
+ *
+ * branch mirjahon
  */
