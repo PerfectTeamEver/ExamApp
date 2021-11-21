@@ -1,19 +1,33 @@
-import "./App.css";
-
+import React, { useEffect, useState } from "react";
+import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
+import { getTests } from "./apis/api";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ResultsPanel from "./components/pages/ResultsPanel";
 function App() {
-  return <div>branch temur</div>;
+   const [tests, setTests] = useState([]);
+
+   useEffect(() => {
+      getTests().then((data) => {
+         setTests(data);
+         console.log("DATA IS COME!");
+      });
+   }, []);
+
+   return (
+      <BrowserRouter>
+         <Routes>
+            <Route
+               exact
+               path="/"
+               element={
+                  tests.length ? <QuestionPanel tests={tests} /> : "loading"
+               }
+            />{" "}
+            <Route path="/results" element={<ResultsPanel tests={tests} />}/>
+               
+         </Routes>
+      </BrowserRouter>
+   );
 }
 
 export default App;
-/**
- *  #1 -> git add .
- *  #2 -> git commit -m "your commit name"
- *  #3 -> git pull origin main
- *  #4 -> git add .
- *  #5 -> git commit -m "your commit name"
- *  #6 -> git push origin (my-branch)
- *
- *
- * (git pull = git fetch + git merge)
- * Temur branch
- */
