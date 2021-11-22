@@ -21,7 +21,7 @@ export const CardContent = styled.div`
   }
 `;
 
-export const Question = styled.div`
+export const QuestionText = styled.div`
   font-size: 20px;
 `;
 
@@ -32,17 +32,14 @@ export const Answers = styled.div`
   margin-top: 50px;
 `;
 
-export const ChoseAnswer = styled.div`
+export const Option = styled.div`
   padding: 15px 0;
   padding-left: 10px;
-  background-color: ${(props) => props.bgcolor};
+  background-color: ${(props) => (props.selected ? "coral" : "white")};
   color: #000;
   border-radius: 5px;
   &:hover {
-    background-color: #7cfc00;
+    background-color: coral;
     cursor: pointer;
-  }
-  &:focus-within {
-    background-color: #7cfc00;
   }
 `;

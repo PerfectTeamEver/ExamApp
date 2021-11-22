@@ -18,6 +18,11 @@ export const Content = styled.div`
   box-shadow: 0 0 10px #000;
 `;
 
+export const TestTitle = styled.div`
+  font-size: 30px;
+  margin-bottom: 30px;
+`;
+
 export const StartBtn = styled.button`
   display: flex;
   align-items: center;
@@ -41,60 +46,7 @@ export const StartBtn = styled.button`
   }
 `;
 
-export const TestTitle = styled.div`
-  font-size: 30px;
-  margin-bottom: 30px;
-`;
-
-export const Result = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  p {
-    margin-bottom: 30px;
-    height: max-content;
-    padding: 100px;
-    font-size: 30px;
-    background-color: #303030;
-    color: #fff;
-    box-shadow: 0 0 10px #303030;
-    span {
-      color: coral;
-      font-size: 35px;
-      font-weight: bold;
-    }
-  }
-`;
-
-export const ResultBtn = styled.div`
-  user-select: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  background-color: #303030;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.5s;
-
-  svg {
-    color: coral;
-    margin-right: 5px;
-    font-size: 30px;
-  }
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-export const MainContainer = styled.div``;
-
-export const TestWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +54,7 @@ export const TestWrapper = styled.div`
   justify-content: center;
 `;
 
-export const Btns = styled.div`
+export const Controls = styled.div`
   width: 70%;
   margin-top: 40px;
   display: flex;
@@ -126,6 +78,8 @@ export const Btn = styled.button`
     transform: scale(1.05);
   }
 `;
+
+export const TestNumber = styled.h1``;
 
 export const StopTest = styled.button`
   padding: 5px 20px;

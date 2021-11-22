@@ -1,22 +1,53 @@
-import "./App.css";
-import { Start } from "./components/Start";
+import React, { useEffect, useState } from "react";
+import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
+import { getTests } from "./apis/api";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ResultsPanel from "./components/pages/ResultsPanel";
 import "./styles/GlobalStyle.css";
+import styled from "styled-components";
 
 function App() {
-  return <Start />;
+  const [tests, setTests] = useState([]);
+
+  useEffect(() => {
+    getTests().then((data) => {
+      setTests(data);
+      console.log("DATA IS COME!");
+    });
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            tests.length ? (
+              <QuestionPanel tests={tests} />
+            ) : (
+              <Loading>
+                <p>Loading...</p>
+              </Loading>
+            )
+          }
+        />
+        <Route path="/results" element={<ResultsPanel tests={tests} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
-/**
- *  #1 -> git add .
- *  #2 -> git commit -m "your commit name"
- *  #3 -> git pull origin main
- *  #4 -> git add .
- *  #5 -> git commit -m "your commit name"
- *  #6 -> git push origin (my-branch)
- *
- *
- * (git pull = git fetch + git merge)
- *
- * branch mirjahon
- */
+
+const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  p {
+    font-size: 40px;
+    font-weight: bold;
+  }
+`;
