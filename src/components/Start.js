@@ -12,12 +12,15 @@ import {
   MainContainer,
   Content,
   StopTest,
+  ResultBtn,
 } from "../styles/TestStyle";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import { GoStop } from "react-icons/go";
+import { AiOutlineFileDone } from "react-icons/ai";
+import { ImPlay2 } from "react-icons/im";
 
 export const Start = () => {
   const [cliked, setClicked] = useState(false);
@@ -41,6 +44,9 @@ export const Start = () => {
               <p>
                 You scored <span>{testNum}</span> out of {language.length} tests
               </p>
+              <ResultBtn>
+                <AiOutlineFileDone /> Show results
+              </ResultBtn>
             </Result>
           ) : (
             <TestWrapper>
@@ -65,7 +71,9 @@ export const Start = () => {
         <StartContent>
           <Content>
             <TestTitle>Click a button and Start Test </TestTitle>
-            <StartBtn onClick={() => setClicked(!cliked)}>Start</StartBtn>
+            <StartBtn onClick={() => setClicked(!cliked)}>
+              <ImPlay2 /> Start
+            </StartBtn>
           </Content>
         </StartContent>
       )}

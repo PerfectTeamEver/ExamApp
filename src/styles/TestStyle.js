@@ -10,24 +10,34 @@ export const StartContent = styled.div`
 
 export const Content = styled.div`
   padding: 50px 100px;
-  border: 2px solid #000;
-  border-radius: 5px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303030;
+  color: #fff;
+  box-shadow: 0 0 10px #000;
 `;
 
 export const StartBtn = styled.button`
+  display: flex;
+  align-items: center;
   padding: 10px 30px;
   font-size: 26px;
   border-radius: 5px;
   border: none;
   font-weight: bold;
   cursor: pointer;
-  background-color: #303030;
-  color: #fff;
+  background-color: coral;
+  color: #000;
   transition: 0.3s;
+
   &:hover {
     background-color: #7cfc00;
     color: #000;
+  }
+
+  svg {
+    margin-right: 5px;
   }
 `;
 
@@ -38,11 +48,13 @@ export const TestTitle = styled.div`
 
 export const Result = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   p {
+    margin-bottom: 30px;
     height: max-content;
     padding: 100px;
     font-size: 30px;
@@ -54,6 +66,29 @@ export const Result = styled.div`
       font-size: 35px;
       font-weight: bold;
     }
+  }
+`;
+
+export const ResultBtn = styled.div`
+  user-select: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  background-color: #303030;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+
+  svg {
+    color: coral;
+    margin-right: 5px;
+    font-size: 30px;
+  }
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
