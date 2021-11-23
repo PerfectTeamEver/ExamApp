@@ -1,16 +1,12 @@
 import React from "react";
 import { Option } from "./QuestionStyle";
 
-const QuestionOption = ({
-  option,
-  handleOptionSelect,
-  id,
-  selectedAnswer,
-  ...props
-}) => {
-  const said = selectedAnswer === option;
+const QuestionOption = ({ option, handleOptionSelect, id, selectedAnswer }) => {
   return (
-    <Option onClick={() => handleOptionSelect(id, option)} selected={said}>
+    <Option
+      onClick={() => handleOptionSelect(id, option)}
+      selected={selectedAnswer === option}
+    >
       {option}
     </Option>
   );

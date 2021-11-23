@@ -15,7 +15,7 @@ import {
 import { GoStop } from "react-icons/go";
 import { ImPlay2 } from "react-icons/im";
 
-const QuestionPanel = ({ tests }) => {
+const QuestionPanel = ({ tests, handleEndTest }) => {
   const [cliked, setClicked] = useState(false);
   const [modifiedTests, setModifiedTests] = useState(tests);
   const [toggleTest, setToggleTest] = useState(0);
@@ -44,17 +44,17 @@ const QuestionPanel = ({ tests }) => {
         return test;
       }
     });
+
     setModifiedTests(tests);
     setCurrentTest(tests[toggleTest]);
   };
-  console.log("modifiedTests", modifiedTests);
 
   return (
     <>
       {cliked ? (
         <Wrapper>
           <Link to="/results">
-            <StopTest>
+            <StopTest onClick={() => handleEndTest(modifiedTests)}>
               <GoStop /> Stop the Test
             </StopTest>
           </Link>

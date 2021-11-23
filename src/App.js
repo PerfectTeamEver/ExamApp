@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
+
 import { getTests } from "./apis/api";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ResultsPanel from "./components/pages/ResultsPanel";
+
+import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
+import ResultsPanel from "./components/ResultsPanel/ResultsPanel";
+
 import "./styles/GlobalStyle.css";
 import styled from "styled-components";
 
 function App() {
   const [tests, setTests] = useState([]);
+  const [doneTests, setDoneTests] = useState([]);
 
   useEffect(() => {
     getTests().then((data) => {
@@ -15,6 +19,10 @@ function App() {
       console.log("DATA IS COME!");
     });
   }, []);
+
+  const handleEndTest = (modifiedTests) => {
+    setDoneTests(modifiedTests);
+  };
 
   return (
     <BrowserRouter>
@@ -24,7 +32,7 @@ function App() {
           path="/"
           element={
             tests.length ? (
-              <QuestionPanel tests={tests} />
+              <QuestionPanel tests={tests} handleEndTest={handleEndTest} />
             ) : (
               <Loading>
                 <p>Loading...</p>
@@ -32,7 +40,10 @@ function App() {
             )
           }
         />
-        <Route path="/results" element={<ResultsPanel tests={tests} />} />
+        <Route
+          path="/results"
+          element={<ResultsPanel doneTests={doneTests} />}
+        />
       </Routes>
     </BrowserRouter>
   );
