@@ -11,9 +11,12 @@ import {
   Wrapper,
   Btn,
   StopTest,
+  TestWrapper,
+  Test,
 } from "./QuestionPanelStyle";
 import { GoStop } from "react-icons/go";
 import { ImPlay2 } from "react-icons/im";
+import Map from "../Map/Map";
 
 const QuestionPanel = ({ tests, handleEndTest }) => {
   const [cliked, setClicked] = useState(false);
@@ -52,23 +55,28 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
   return (
     <>
       {cliked ? (
-        <Wrapper>
-          <Link to="/results">
-            <StopTest onClick={() => handleEndTest(modifiedTests)}>
-              <GoStop /> Stop the Test
-            </StopTest>
-          </Link>
-          <Question
-            {...currentTest}
-            toggleTest={toggleTest}
-            testLength={tests.length}
-            handleOptionSelect={handleOptionSelect}
-          />
-          <Controls>
-            <Btn onClick={onPreviousTest}>PREVIOUS</Btn>
-            <Btn onClick={onNextTest}>NEXT</Btn>
-          </Controls>
-        </Wrapper>
+        <TestWrapper>
+          <Test>
+            <Wrapper>
+              <Link to="/results">
+                <StopTest onClick={() => handleEndTest(modifiedTests)}>
+                  <GoStop /> Stop the Test
+                </StopTest>
+              </Link>
+              <Question
+                {...currentTest}
+                toggleTest={toggleTest}
+                testLength={tests.length}
+                handleOptionSelect={handleOptionSelect}
+              />
+              <Controls>
+                <Btn onClick={onPreviousTest}>PREVIOUS</Btn>
+                <Btn onClick={onNextTest}>NEXT</Btn>
+              </Controls>
+            </Wrapper>
+            <Map />
+          </Test>
+        </TestWrapper>
       ) : (
         <StartContent>
           <Content>
