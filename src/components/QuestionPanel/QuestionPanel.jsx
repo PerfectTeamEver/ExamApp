@@ -73,7 +73,11 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
                   <Btn onClick={onNextTest}>NEXT</Btn>
                </Controls>
             </Wrapper>
-            <MapQuestions tests={modifiedTests} handleMap={handleMap} />
+            <MapQuestions
+               tests={modifiedTests}
+               handleMap={handleMap}
+               toggleTest={toggleTest}
+            />
          </Test>
       </TestWrapper>
    );
