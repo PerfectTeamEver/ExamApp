@@ -23,6 +23,7 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
   const [modifiedTests, setModifiedTests] = useState(tests);
   const [toggleTest, setToggleTest] = useState(0);
   const [currentTest, setCurrentTest] = useState(modifiedTests[0]);
+  // const [testsAmout, setTestsAmout] = useState(0);
 
   const onNextTest = () => {
     if (toggleTest + 1 !== tests.length) {
@@ -36,6 +37,7 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
       setCurrentTest(modifiedTests[toggleTest - 1]);
     }
   };
+
   const handleOptionSelect = (id, option) => {
     const tests = modifiedTests.map((test) => {
       if (test.id === id) {
@@ -51,6 +53,32 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
     setModifiedTests(tests);
     setCurrentTest(tests[toggleTest]);
   };
+
+  const handleMap = (id, num) => {
+    setToggleTest(num - 1);
+    const Amount = testsAmount.map((testNum) => {
+      if (testNum.id === id) {
+        return {
+          ...testNum,
+          selectedNum: num,
+        };
+      } else return testNum;
+    });
+
+    setTestsAmount(Amount);
+    setCurrentTest(modifiedTests[num - 1]);
+  };
+
+  // for (let i = 1; i < tests.length; i++) {
+  //   setTestsAmout(testsAmout + 1);
+  // }
+  const [testsAmount, setTestsAmount] = useState([
+    { num: 1, id: 1 },
+    { num: 2, id: 2 },
+    { num: 3, id: 3 },
+    { num: 4, id: 4 },
+    { num: 5, id: 5 },
+  ]);
 
   return (
     <>
@@ -74,7 +102,11 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
                 <Btn onClick={onNextTest}>NEXT</Btn>
               </Controls>
             </Wrapper>
-            <Map />
+            <Map
+              testsAmount={testsAmount}
+              toggleTest={toggleTest}
+              handleMap={handleMap}
+            />
           </Test>
         </TestWrapper>
       ) : (

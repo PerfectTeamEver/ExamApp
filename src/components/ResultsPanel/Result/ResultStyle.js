@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const Option = styled.div`
   padding: 10px;
   background-color: ${(props) => props.isTrue && "#7cfc00"};
-  /* background-color: ${(props) => props.isFalse && "red"}; */
+  border: 1.5px solid
+    ${(props) => {
+      return props.isFalseSelected ? "red" : "none";
+    }};
   &:hover {
     cursor: pointer;
   }

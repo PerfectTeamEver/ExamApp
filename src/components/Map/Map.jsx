@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { MapContent, TestNum } from "./MapStyle";
 
-const Map = () => {
+const Map = ({ handleMap, testsAmount }) => {
+  // const [clicked, setClicked] = useState(false);
+  debugger;
+
   return (
-    <div>
-      <MapContent>
-        <TestNum>1</TestNum>
-        <TestNum>2</TestNum>
-        <TestNum>3</TestNum>
-        <TestNum>4</TestNum>
-        <TestNum>5</TestNum>
-      </MapContent>
-    </div>
+    <MapContent>
+      {testsAmount.map((item) => {
+        return (
+          <TestNum
+            onClick={() => handleMap(item.id, item.num)}
+            selected={item.selectedNum === item.num}
+          >
+            {item.num}
+          </TestNum>
+        );
+      })}
+    </MapContent>
   );
 };
 

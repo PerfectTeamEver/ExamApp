@@ -5,7 +5,9 @@ const ResultOption = ({ option, selectedAnswer, correct_answer }) => {
   return (
     <Option
       isTrue={option === correct_answer}
-      // isFalse={option === selectedAnswer}
+      isFalseSelected={
+        option === selectedAnswer && correct_answer !== selectedAnswer
+      }
     >
       {/* {selectedAnswer === correct_answer && option === correct_answer && "✔ "} */}
       {selectedAnswer === correct_answer
