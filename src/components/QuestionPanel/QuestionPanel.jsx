@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import ResultsPanel from "../pages/ResultsPanel";
 import Question from "./Question/Question";
 import {
-  StartContent,
-  Content,
-  TestTitle,
-  StartBtn,
   Controls,
   Wrapper,
   Btn,
@@ -15,15 +10,18 @@ import {
   Test,
 } from "./QuestionPanelStyle";
 import { GoStop } from "react-icons/go";
-import { ImPlay2 } from "react-icons/im";
 import Map from "../Map/Map";
+import Start from "../StartTest/Start";
 
 const QuestionPanel = ({ tests, handleEndTest }) => {
-  const [cliked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [modifiedTests, setModifiedTests] = useState(tests);
   const [toggleTest, setToggleTest] = useState(0);
   const [currentTest, setCurrentTest] = useState(modifiedTests[0]);
-  // const [testsAmout, setTestsAmout] = useState(0);
+
+  const Clicking = (click) => {
+    setClicked(click);
+  };
 
   const onNextTest = () => {
     if (toggleTest + 1 !== tests.length) {
@@ -69,9 +67,6 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
     setCurrentTest(modifiedTests[num - 1]);
   };
 
-  // for (let i = 1; i < tests.length; i++) {
-  //   setTestsAmout(testsAmout + 1);
-  // }
   const [testsAmount, setTestsAmount] = useState([
     { num: 1, id: 1 },
     { num: 2, id: 2 },
@@ -82,7 +77,7 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
 
   return (
     <>
-      {cliked ? (
+      {clicked ? (
         <TestWrapper>
           <Test>
             <Wrapper>
@@ -110,14 +105,7 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
           </Test>
         </TestWrapper>
       ) : (
-        <StartContent>
-          <Content>
-            <TestTitle>Click a button and Start Test </TestTitle>
-            <StartBtn onClick={() => setClicked(!cliked)}>
-              <ImPlay2 /> Start
-            </StartBtn>
-          </Content>
-        </StartContent>
+        <Start clicked={clicked} Clicking={Clicking} />
       )}
     </>
   );

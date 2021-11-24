@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { MapContent, TestNum } from "./MapStyle";
 
 const Map = ({ handleMap, testsAmount }) => {
-  // const [clicked, setClicked] = useState(false);
   debugger;
 
   return (
