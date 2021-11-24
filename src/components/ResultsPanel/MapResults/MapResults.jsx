@@ -1,7 +1,7 @@
 import React from "react";
 import { MapContent, TestNum } from "./MapStyle";
 
-const Map = ({ handleMap, testsAmount }) => {
+const MapResults = ({ handleMap, testsAmount }) => {
   return (
     <MapContent>
       {testsAmount.map((item) => {
@@ -18,4 +18,4 @@ const Map = ({ handleMap, testsAmount }) => {
   );
 };
 
-export default Map;
+export default MapResults;
