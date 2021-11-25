@@ -7,9 +7,8 @@ import {
   Content,
   Wrapper,
   Btn,
-  Map,
-  TestNum,
 } from "./ResultStyle";
+import MapResult from "./MapResult/MapResult";
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 
@@ -29,6 +28,11 @@ const ResultsReview = ({ tests }) => {
       setCurrentTest(tests[toggleTest - 1]);
     }
   };
+
+  const handleMap = (index) => {
+    setToggleTest(index);
+    setCurrentTest(tests[index]);
+  };
   return (
     <ResultContainer>
       <Content>
@@ -44,13 +48,12 @@ const ResultsReview = ({ tests }) => {
           </TestNumber>
           <Result {...currentTest} />
         </Wrapper>
-        <Map>
-          <TestNum>1</TestNum>
-          <TestNum>2</TestNum>
-          <TestNum>3</TestNum>
-          <TestNum>4</TestNum>
-          <TestNum>5</TestNum>
-        </Map>
+        <MapResult
+          {...currentTest}
+          toggleTest={toggleTest}
+          tests={tests}
+          handleMap={handleMap}
+        />
       </Content>
       <Controls>
         <Btn onClick={onPreviousTest}>PREVIOUS</Btn>

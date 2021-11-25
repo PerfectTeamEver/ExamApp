@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Question from "./Question/Question";
 import {
   Controls,
   Wrapper,
   Btn,
-  StopTest,
   TestWrapper,
   Test,
 } from "./QuestionPanelStyle";
-import { GoStop } from "react-icons/go";
-import Map from "../Map/Map";
+import MapQuestions from "../MapQuestions/MapQuestions";
 import Start from "../StartTest/Start";
 
 const QuestionPanel = ({ tests, handleEndTest }) => {
@@ -52,28 +49,10 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
     setCurrentTest(tests[toggleTest]);
   };
 
-  const handleMap = (id, num) => {
-    setToggleTest(num - 1);
-    const Amount = testsAmount.map((testNum) => {
-      if (testNum.id === id) {
-        return {
-          ...testNum,
-          selectedNum: num,
-        };
-      } else return testNum;
-    });
-
-    setTestsAmount(Amount);
-    setCurrentTest(modifiedTests[num - 1]);
+  const handleMap = (index) => {
+    setCurrentTest(modifiedTests[index]);
+    setToggleTest(index);
   };
-
-  const [testsAmount, setTestsAmount] = useState([
-    { num: 1, id: 1 },
-    { num: 2, id: 2 },
-    { num: 3, id: 3 },
-    { num: 4, id: 4 },
-    { num: 5, id: 5 },
-  ]);
 
   return (
     <>
@@ -81,11 +60,6 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
         <TestWrapper>
           <Test>
             <Wrapper>
-              <Link to="/results">
-                <StopTest onClick={() => handleEndTest(modifiedTests)}>
-                  <GoStop /> Stop the Test
-                </StopTest>
-              </Link>
               <Question
                 {...currentTest}
                 toggleTest={toggleTest}
@@ -97,10 +71,11 @@ const QuestionPanel = ({ tests, handleEndTest }) => {
                 <Btn onClick={onNextTest}>NEXT</Btn>
               </Controls>
             </Wrapper>
-            <Map
-              testsAmount={testsAmount}
-              toggleTest={toggleTest}
+            <MapQuestions
+              tests={modifiedTests}
               handleMap={handleMap}
+              toggleTest={toggleTest}
+              handleEndTest={handleEndTest}
             />
           </Test>
         </TestWrapper>
