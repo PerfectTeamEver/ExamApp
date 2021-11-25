@@ -37,8 +37,7 @@ export const TestNum = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: ${(props) =>
-    props.currentTest ? "yellow" : props.isCorrect ? "green" : "red"};
+  background-color: ${(props) => props.currentTest && "yellow"};
   &:hover {
     background-color: yellow;
   }
