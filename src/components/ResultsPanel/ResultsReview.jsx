@@ -8,12 +8,13 @@ import {
   Wrapper,
   TestWrapper,
   Btn,
+  ResultScore,
 } from "./ResultStyle";
 import MapResult from "./MapResult/MapResult";
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 
-const ResultsReview = ({ tests }) => {
+const ResultsReview = ({ tests, score }) => {
   const [toggleTest, setToggleTest] = useState(0);
   const [currentTest, setCurrentTest] = useState(tests[0]);
 
@@ -39,13 +40,17 @@ const ResultsReview = ({ tests }) => {
       <Content>
         <Wrapper>
           <TestWrapper>
-            <h3>Results</h3>
+            <ResultScore>
+              Results : <span>{score} ball</span>
+            </ResultScore>
             <TestNumber>
               {toggleTest + 1} - test:
               {currentTest.isTrueAnswered ? (
                 <BsCheckLg style={{ color: "#32CD32" }} />
-              ) : (
+              ) : currentTest.isTrueAnswered === false ? (
                 <FaTimes style={{ color: "red" }} />
+              ) : (
+                <h5>not selected</h5>
               )}
             </TestNumber>
             <Result {...currentTest} />

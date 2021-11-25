@@ -81,12 +81,20 @@ export const TestWrapper = styled.div`
   padding: 50px;
   box-shadow: 0 0 10px #303030;
   position: relative;
+`;
 
-  h3 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
+export const ResultScore = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 25px;
+  background-color: #303030;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+  span {
+    font-size: 20px;
+    color: coral;
     font-weight: bold;
   }
 `;
@@ -149,5 +157,10 @@ export const TestNumber = styled.h2`
   svg {
     color: green;
     margin-left: 10px;
+  }
+
+  h5 {
+    margin-left: 10px;
+    color: red;
   }
 `;

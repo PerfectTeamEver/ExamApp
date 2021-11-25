@@ -8,7 +8,6 @@ const ResultsPanel = ({ doneTests }) => {
   const [clicked, setClicked] = useState(false);
 
   let score = 0;
-  //  debugger;
   let tests = doneTests.map((test) => {
     if (test.correct_answer === test.selectedAnswer) {
       score++;
@@ -16,7 +15,13 @@ const ResultsPanel = ({ doneTests }) => {
         ...test,
         isTrueAnswered: true,
       };
-    } else {
+    }
+    if (test.selectedAnswer === null)
+      return {
+        ...test,
+        isTrueAnswered: null,
+      };
+    else {
       return {
         ...test,
         isTrueAnswered: false,
@@ -27,7 +32,7 @@ const ResultsPanel = ({ doneTests }) => {
   return (
     <ResultWrapper>
       {clicked ? (
-        <ResultsReview tests={tests} />
+        <ResultsReview tests={tests} score={score} />
       ) : (
         <>
           <p>
