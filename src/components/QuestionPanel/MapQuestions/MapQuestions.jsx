@@ -2,7 +2,6 @@ import React from "react";
 import { MapContent, TestNum } from "./MapStyle";
 
 const MapQuestions = ({ handleMap, tests, toggleTest }) => {
-   debugger;
    return (
       <MapContent>
          {tests.map((test, index) => (

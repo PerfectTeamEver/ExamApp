@@ -7,16 +7,18 @@ import {
    Content,
    Wrapper,
    Btn,
-   Map,
-   TestNum,
 } from "./ResultStyle";
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 
 const ResultsReview = ({ tests }) => {
+   window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = "o/";
+      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+      return confirmationMessage; //Webkit, Safari, Chrome
+   });
    const [toggleTest, setToggleTest] = useState(0);
    const [currentTest, setCurrentTest] = useState(tests[0]);
-
    const onNextTest = () => {
       if (toggleTest + 1 !== tests.length) {
          setToggleTest(toggleTest + 1);
