@@ -87,9 +87,9 @@ export const ResultScore = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 25px;
+  font-size: 20px;
   background-color: #303030;
-  padding: 5px 10px;
+  padding: 7px 15px;
   color: #fff;
   border-radius: 5px;
   span {

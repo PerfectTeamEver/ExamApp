@@ -10,7 +10,6 @@ import {
 import { GoStop } from "react-icons/go";
 
 const MapQuestions = ({ handleMap, tests, toggleTest, handleEndTest }) => {
-  debugger;
   return (
     <MapContainer>
       <MapContent>

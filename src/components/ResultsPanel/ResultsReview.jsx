@@ -61,7 +61,6 @@ const ResultsReview = ({ tests, score }) => {
           </Controls>
         </Wrapper>
         <MapResult
-          {...currentTest}
           toggleTest={toggleTest}
           tests={tests}
           handleMap={handleMap}

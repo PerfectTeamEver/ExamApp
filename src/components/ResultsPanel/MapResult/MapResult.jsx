@@ -1,13 +1,7 @@
 import React from "react";
 import { MapContainer, MapContent, Select, TestNum } from "./MapResultStyle";
-
-const MapResult = ({
-  toggleTest,
-  tests,
-  handleMap,
-  correct_awswer,
-  selected_answer,
-}) => {
+debugger;
+const MapResult = ({ toggleTest, tests, handleMap }) => {
   return (
     <MapContainer>
       <MapContent>
@@ -15,8 +9,7 @@ const MapResult = ({
           return (
             <Select currentTest={toggleTest === index}>
               <TestNum
-                currentTest={toggleTest === index}
-                isCorrect={selected_answer === correct_awswer}
+                isCorrect={test.isTrueAnswered === true}
                 onClick={() => handleMap(index)}
               >
                 {index + 1}
