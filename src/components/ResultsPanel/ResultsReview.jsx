@@ -6,6 +6,7 @@ import {
   ResultContainer,
   Content,
   Wrapper,
+  TestWrapper,
   Btn,
 } from "./ResultStyle";
 import MapResult from "./MapResult/MapResult";
@@ -37,16 +38,22 @@ const ResultsReview = ({ tests }) => {
     <ResultContainer>
       <Content>
         <Wrapper>
-          <h3>Results</h3>
-          <TestNumber>
-            {toggleTest + 1} - test:
-            {currentTest.isTrueAnswered ? (
-              <BsCheckLg style={{ color: "#32CD32" }} />
-            ) : (
-              <FaTimes style={{ color: "red" }} />
-            )}
-          </TestNumber>
-          <Result {...currentTest} />
+          <TestWrapper>
+            <h3>Results</h3>
+            <TestNumber>
+              {toggleTest + 1} - test:
+              {currentTest.isTrueAnswered ? (
+                <BsCheckLg style={{ color: "#32CD32" }} />
+              ) : (
+                <FaTimes style={{ color: "red" }} />
+              )}
+            </TestNumber>
+            <Result {...currentTest} />
+          </TestWrapper>
+          <Controls>
+            <Btn onClick={onPreviousTest}>PREVIOUS</Btn>
+            <Btn onClick={onNextTest}>NEXT</Btn>
+          </Controls>
         </Wrapper>
         <MapResult
           {...currentTest}
@@ -55,10 +62,6 @@ const ResultsReview = ({ tests }) => {
           handleMap={handleMap}
         />
       </Content>
-      <Controls>
-        <Btn onClick={onPreviousTest}>PREVIOUS</Btn>
-        <Btn onClick={onNextTest}>NEXT</Btn>
-      </Controls>
     </ResultContainer>
   );
 };

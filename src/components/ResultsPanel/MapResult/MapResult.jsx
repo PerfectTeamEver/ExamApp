@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, MapContent, TestNum } from "./MapResultStyle";
+import { MapContainer, MapContent, Select, TestNum } from "./MapResultStyle";
 
 const MapResult = ({
   toggleTest,
@@ -13,13 +13,15 @@ const MapResult = ({
       <MapContent>
         {tests.map((test, index) => {
           return (
-            <TestNum
-              currentTest={toggleTest === index}
-              isCorrect={selected_answer === correct_awswer}
-              onClick={() => handleMap(index)}
-            >
-              {index + 1}
-            </TestNum>
+            <Select currentTest={toggleTest === index}>
+              <TestNum
+                currentTest={toggleTest === index}
+                isCorrect={selected_answer === correct_awswer}
+                onClick={() => handleMap(index)}
+              >
+                {index + 1}
+              </TestNum>
+            </Select>
           );
         })}
       </MapContent>

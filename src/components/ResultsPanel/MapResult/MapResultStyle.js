@@ -21,6 +21,11 @@ export const MapContent = styled.div`
   box-shadow: 0 0 10px #303030;
 `;
 
+export const Select = styled.div`
+  border-bottom: ${(props) => props.currentTest && "2px solid #fff"};
+  padding-bottom: ${(props) => props.currentTest && "5px"};
+`;
+
 export const TestNum = styled.div`
   user-select: none;
   width: 25px;
