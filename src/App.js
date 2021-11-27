@@ -8,6 +8,7 @@ import ResultsPanel from "./components/ResultsPanel/ResultsPanel";
 
 import "./styles/GlobalStyle.css";
 import styled from "styled-components";
+import QuestionFunctions from "./components/QuestionPanel/Question.functions";
 
 function App() {
   const [tests, setTests] = useState([]);
@@ -32,7 +33,7 @@ function App() {
           path="/"
           element={
             tests.length ? (
-              <QuestionPanel tests={tests} handleEndTest={handleEndTest} />
+              <QuestionFunctions tests={tests} handleEndTest={handleEndTest} />
             ) : (
               <Loading>
                 <p>Loading...</p>
