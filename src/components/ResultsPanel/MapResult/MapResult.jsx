@@ -1,6 +1,5 @@
 import React from "react";
 import { MapContainer, MapContent, Select, TestNum } from "./MapResultStyle";
-debugger;
 const MapResult = ({ toggleTest, tests, handleMap }) => {
   return (
     <MapContainer>
