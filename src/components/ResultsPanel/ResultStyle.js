@@ -64,22 +64,37 @@ export const Content = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  background-color: #fff;
   width: 70%;
-  min-height: 400px;
-  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  box-shadow: 0 0 10px #303030;
+`;
 
-  h3 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
+export const TestWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  min-height: 400px;
+  padding: 50px;
+  box-shadow: 0 0 10px #303030;
+  position: relative;
+`;
+
+export const ResultScore = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  background-color: #303030;
+  padding: 7px 15px;
+  color: #fff;
+  border-radius: 5px;
+  span {
+    font-size: 20px;
+    color: coral;
     font-weight: bold;
   }
 `;
@@ -109,7 +124,7 @@ export const TestNum = styled.div`
 `;
 
 export const Controls = styled.div`
-  width: 70%;
+  width: 100%;
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
@@ -142,5 +157,10 @@ export const TestNumber = styled.h2`
   svg {
     color: green;
     margin-left: 10px;
+  }
+
+  h5 {
+    margin-left: 10px;
+    color: red;
   }
 `;

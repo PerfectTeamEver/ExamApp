@@ -37,7 +37,7 @@ export const TestNum = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: ${(props) => (props.isAnswerSelected ? "coral" : "white")};
+  background-color: ${(props) => (props.isCorrect ? "#7cfc00" : "red")};
 `;
 
 export const StopTest = styled.button`

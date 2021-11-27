@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import ResultsReview from "./ResultsReview";
+
 import { ResultWrapper, ResultBtn } from "./ResultStyle";
 import { AiOutlineFileDone } from "react-icons/ai";
 
 const ResultsPanel = ({ doneTests }) => {
   const [clicked, setClicked] = useState(false);
+
   let score = 0;
   let tests = doneTests.map((test) => {
     if (test.correct_answer === test.selectedAnswer) {
@@ -13,7 +15,13 @@ const ResultsPanel = ({ doneTests }) => {
         ...test,
         isTrueAnswered: true,
       };
-    } else {
+    }
+    if (test.selectedAnswer === null)
+      return {
+        ...test,
+        isTrueAnswered: null,
+      };
+    else {
       return {
         ...test,
         isTrueAnswered: false,
@@ -24,7 +32,7 @@ const ResultsPanel = ({ doneTests }) => {
   return (
     <ResultWrapper>
       {clicked ? (
-        <ResultsReview tests={tests} />
+        <ResultsReview tests={tests} score={score} />
       ) : (
         <>
           <p>
