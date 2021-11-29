@@ -1,62 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import Question from "./Question/Question";
 import {
-  Controls,
-  Wrapper,
-  Btn,
-  TestWrapper,
-  Test,
+   Controls,
+   Wrapper,
+   Btn,
+   TestWrapper,
+   Test,
 } from "./QuestionPanelStyle";
 import MapQuestions from "./MapQuestions/MapQuestions";
 import Start from "../StartTest/Start";
+import { useDispatch } from "react-redux";
+import {
+   nextTest,
+   prevTest,
+} from "./../../store/questions/questions-slice";
 
-const QuestionPanel = ({
-  currentTest,
-  toggleTest,
-  handleOptionSelect,
-  onPreviousTest,
-  onNextTest,
-  modifiedTests,
-  handleMap,
-  handleEndTest,
-  testLength,
-}) => {
-  const [clicked, setClicked] = useState(false);
-
-  const Clicking = (click) => {
-    setClicked(click);
-  };
-
-  return (
-    <>
-      {clicked ? (
-        <TestWrapper>
-          <Test>
+const QuestionPanel = () => {
+   const dispatch = useDispatch();
+   return (
+      <TestWrapper>
+         <Test>
             <Wrapper>
-              <Question
-                {...currentTest}
-                toggleTest={toggleTest}
-                testLength={testLength}
-                handleOptionSelect={handleOptionSelect}
-              />
-              <Controls>
-                <Btn onClick={onPreviousTest}>PREVIOUS</Btn>
-                <Btn onClick={onNextTest}>NEXT</Btn>
-              </Controls>
+               <Question />
+               <Controls>
+                  <Btn onClick={() => dispatch(prevTest())}>PREVIOUS</Btn>
+                  <Btn onClick={() => dispatch(nextTest())}>NEXT</Btn>
+               </Controls>
             </Wrapper>
-            <MapQuestions
-              tests={modifiedTests}
-              handleMap={handleMap}
-              toggleTest={toggleTest}
-              handleEndTest={handleEndTest}
-            />
-          </Test>
-        </TestWrapper>
-      ) : (
-        <Start clicked={clicked} Clicking={Clicking} />
-      )}
-    </>
-  );
+            <MapQuestions />
+         </Test>
+      </TestWrapper>
+   );
 };
 
 export default QuestionPanel;
