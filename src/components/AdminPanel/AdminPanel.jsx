@@ -1,49 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   Wrapper,
   Adding,
+  Answer,
   Question,
   Input,
   Add,
+  Check,
 } from "./AdminPanel.style";
-import Answers from "./Answers/Answers";
+import { BsCheckLg } from "react-icons/bs";
 
 const AdminPanel = () => {
-  const [test, setTest] = useState({});
-
-  const handleQuestion = (val) => {
-    setTest({ ...test, question: val });
-  };
-
-  const handleAnswer = (answer, click) => {
-    if (click) setTest({ ...test, correct_answer: answer });
-    else setTest({ ...test, answer: answer });
-  };
-
-  const PushTest = () => {
-    console.log(test);
-  };
-
   return (
     <Container>
       <Wrapper>
-        <h3>Adding question</h3>
         <Adding>
           <form action="">
             <Question>
               <label htmlFor="question">QUESTION:</label>
-              <Input
-                type="text"
-                id="question"
-                placeholder="Insert question"
-                onChange={(e) => handleQuestion(e.target.value)}
-              />
+              <Input type="text" id="question" placeholder="Insert question" />
             </Question>
-            <Answers handleAnswer={handleAnswer} />
+            <Answer>
+              <Input type="text" placeholder="Insert answer" />
+              <Check>{<BsCheckLg />}</Check>
+            </Answer>
           </form>
         </Adding>
-        <Add onClick={() => PushTest()}>Add</Add>
+        <Add>Add</Add>
       </Wrapper>
     </Container>
   );

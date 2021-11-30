@@ -22,16 +22,6 @@ export const Wrapper = styled.div`
   box-shadow: 0 0 10px #303030;
 `;
 
-export const Input = styled.input`
-  outline: none;
-  margin-left: 15px;
-  font-size: 20px;
-  border-radius: 5px;
-  border: none;
-  padding: 7px 10px;
-  width: 70%;
-`;
-
 export const Adding = styled.div`
   width: 100%;
   display: flex;
@@ -51,6 +41,24 @@ export const Question = styled.div`
   }
 `;
 
+export const Input = styled.input`
+  outline: none;
+  margin-left: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  padding: 7px 10px;
+  width: 70%;
+`;
+
+export const Answer = styled.div`
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Add = styled.button`
   border: none;
   border-radius: 5px;
@@ -63,9 +71,23 @@ export const Add = styled.button`
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
-
   &:hover {
     transform: scale(1.05);
+  }
+`;
+
+export const Check = styled.div`
+  cursor: pointer;
+  margin-left: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    color: #000;
+    font-size: 15px;
   }
 `;
 
