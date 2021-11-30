@@ -3,50 +3,28 @@ import {
   Container,
   Wrapper,
   Adding,
-  Answer,
   Question,
   Input,
   Add,
-  Check,
 } from "./AdminPanel.style";
-import { BsCheckLg } from "react-icons/bs";
+import Answers from "./Answers/Answers";
 
-const AdminPanel = ({}) => {
-  const [clicked1, setClicked1] = useState(false);
-  const [clicked2, setClicked2] = useState(false);
-  const [clicked3, setClicked3] = useState(false);
-  const [clicked4, setClicked4] = useState(false);
-  let check1Id = 1;
-  let check2Id = 2;
-  let check3Id = 3;
-  let check4Id = 4;
+const AdminPanel = () => {
+  const [test, setTest] = useState({});
 
-  const handleClick = (id) => {
-    if (id === 1) {
-      setClicked1(!clicked1);
-      setClicked2(false);
-      setClicked3(false);
-      setClicked4(false);
-    }
-    if (id === 2) {
-      setClicked2(!clicked2);
-      setClicked1(false);
-      setClicked3(false);
-      setClicked4(false);
-    }
-    if (id === 3) {
-      setClicked3(!clicked3);
-      setClicked2(false);
-      setClicked1(false);
-      setClicked4(false);
-    }
-    if (id === 4) {
-      setClicked4(!clicked4);
-      setClicked2(false);
-      setClicked3(false);
-      setClicked1(false);
-    }
+  const handleQuestion = (val) => {
+    setTest({ ...test, question: val });
   };
+
+  const handleAnswer = (answer, click) => {
+    if (click) setTest({ ...test, correct_answer: answer });
+    else setTest({ ...test, answer: answer });
+  };
+
+  const PushTest = () => {
+    console.log(test);
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -55,39 +33,17 @@ const AdminPanel = ({}) => {
           <form action="">
             <Question>
               <label htmlFor="question">QUESTION:</label>
-              <Input type="text" id="question" placeholder="Insert question" />
+              <Input
+                type="text"
+                id="question"
+                placeholder="Insert question"
+                onChange={(e) => handleQuestion(e.target.value)}
+              />
             </Question>
-            <Answer>
-              Answer :
-              <Input type="text" placeholder="Insert answer" />
-              <Check onClick={() => handleClick(check1Id)}>
-                {clicked1 && <BsCheckLg />}
-              </Check>
-            </Answer>
-            <Answer>
-              Answer :
-              <Input type="text" placeholder="Insert answer" />
-              <Check onClick={() => handleClick(check2Id)}>
-                {clicked2 && <BsCheckLg />}
-              </Check>
-            </Answer>
-            <Answer>
-              Answer :
-              <Input type="text" placeholder="Insert answer" />
-              <Check onClick={() => handleClick(check3Id)}>
-                {clicked3 && <BsCheckLg />}
-              </Check>
-            </Answer>
-            <Answer>
-              Answer :
-              <Input type="text" placeholder="Insert answer" />
-              <Check onClick={() => handleClick(check4Id)}>
-                {clicked4 && <BsCheckLg />}
-              </Check>
-            </Answer>
+            <Answers handleAnswer={handleAnswer} />
           </form>
         </Adding>
-        <Add>Add</Add>
+        <Add onClick={() => PushTest()}>Add</Add>
       </Wrapper>
     </Container>
   );
