@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
 import ResultsPanel from "./components/ResultsPanel/ResultsPanel";
 import { fetchAsyncTests, getTests } from "./store/questions/questions-slice";
-import "./styles/GlobalStyle.css";
 import { Loading } from "./App.style";
+import "./styles/GlobalStyle.css";
 
 function App() {
   const dispatch = useDispatch();
