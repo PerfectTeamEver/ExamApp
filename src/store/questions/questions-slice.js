@@ -20,7 +20,6 @@ export const fetchAsyncTests = createAsyncThunk(
    "tests/fetchAsyncTests",
    async () => {
       const data = await Axios.get("?amount=7");
-      console.log(data);
       return data.data.results.map((item) => ({
          ...item,
          selectedAnswer: null,
@@ -79,7 +78,6 @@ const testsSlice = createSlice({
          console.log("pending");
       },
       [fetchAsyncTests.fulfilled]: (state, { payload }) => {
-         console.log("fetched!");
          return {
             ...state,
             tests: payload,

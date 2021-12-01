@@ -51,7 +51,7 @@ export const Input = styled.input`
   width: 70%;
 `;
 
-export const Answer = styled.div`
+export const Option = styled.div`
   margin: 20px 0;
   width: 100%;
   display: flex;
@@ -59,7 +59,7 @@ export const Answer = styled.div`
   align-items: center;
 `;
 
-export const Add = styled.button`
+export const Add = styled.input`
   border: none;
   border-radius: 5px;
   padding: 5px 20px;
