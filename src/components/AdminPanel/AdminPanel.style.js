@@ -71,7 +71,6 @@ export const Add = styled.input`
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
-
   &:hover {
     transform: scale(1.05);
   }

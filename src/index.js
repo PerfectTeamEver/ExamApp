@@ -7,8 +7,8 @@ import { store } from "./store/store";
 
 // ReactDOM.render(<AdminPanel />, document.getElementById("root"));
 ReactDOM.render(
-   <Provider store={store}>
-      <App />
-   </Provider>,
-   document.getElementById("root")
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
