@@ -32,7 +32,7 @@ const MapQuestions = () => {
                </Select>
             ))}
          </MapContent>
-         <Link to="/results">
+         <Link to="/exam/results">
             <StopTest onClick={() => dispatch(endTests())}>
                <GoStop /> Stop the Test
             </StopTest>
