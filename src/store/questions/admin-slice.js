@@ -18,6 +18,7 @@ const createdTestsSlice = createSlice({
             question: "",
             correct_answer: "",
             incorrect_answers: [],
+            id: Math.floor(Math.random() * 100000),
          };
          let trueAnswerIndex = null;
          test.question = payload.question;
@@ -27,9 +28,12 @@ const createdTestsSlice = createSlice({
             }
          }
          for (let key in payload) {
-            if (key.split("_")[0] === "option" && key.split("_")[1] === trueAnswerIndex) {
+            if (
+               key.split("_")[0] === "option" &&
+               key.split("_")[1] === trueAnswerIndex
+            ) {
                test.correct_answer = payload[key];
-            } else if(key.split("_")[0] === "option") {
+            } else if (key.split("_")[0] === "option") {
                test.incorrect_answers.push(payload[key]);
             }
          }

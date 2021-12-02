@@ -14,11 +14,12 @@ const CreatedTests = () => {
          </div>
          <h1>Created Tests</h1>
          <div>
-            {
-               createdTests.map((test) => (
+            {createdTests.map((test) => (
+               <div key={test.id}>
                   <h1>{test.question}</h1>
-               ))
-            }
+                  <h6>{test.correct_answer}</h6>
+               </div>
+            ))}
          </div>
       </div>
    );

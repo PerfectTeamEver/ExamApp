@@ -20,21 +20,23 @@ const AdminPanel = () => {
       register,
       handleSubmit,
       watch,
+      reset,
       formState: { errors },
    } = useForm();
    const dispatch = useDispatch();
    const onSubmitForm = (data) => {
       if (!validation()) {
+         reset();
          dispatch(saveCreatedTest(data));
       }
    };
    const validation = () => {
       let data = watch();
-      let validate = [];
+      let trueAnswer = [];
       Object.values(data).forEach((value) => {
-         value === true && validate.push(value);
+         value === true && trueAnswer.push(value);
       });
-      return validate.length !== 1;
+      return trueAnswer.length !== 1;
    };
    return (
       <Container>
@@ -49,7 +51,7 @@ const AdminPanel = () => {
                      />
                   </Question>
                   {[...Array(4)].map((e, i) => (
-                     <Option>
+                     <Option key={i}>
                         <input
                            {...register("option_" + i, {
                               required: true,
