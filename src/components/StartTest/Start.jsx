@@ -8,11 +8,9 @@ const Start = () => {
     <StartContent>
       <Content>
         <TestTitle>Click a button and Start Test </TestTitle>
-        <Link>
-          <StartBtn>
-            <ImPlay2 /> Start
-          </StartBtn>
-        </Link>
+        <StartBtn>
+          <ImPlay2 /> Start
+        </StartBtn>
       </Content>
     </StartContent>
   );

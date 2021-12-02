@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route exact path="/" element={<AdminPanel />} /> */}
-        <Route exact path="/createdTests" element={<CreatedTests />} />
+        {/* <Route exact path="/createdTests" element={<CreatedTests />} /> */}
         <Route exact path="/" element={<Start />} />
         {/* <Route
           exact
