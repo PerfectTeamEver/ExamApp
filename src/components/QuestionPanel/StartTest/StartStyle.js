@@ -16,6 +16,9 @@ export const Content = styled.div`
   background-color: #303030;
   color: #fff;
   box-shadow: 0 0 10px #000;
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const TestTitle = styled.div`

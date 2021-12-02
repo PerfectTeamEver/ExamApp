@@ -16,7 +16,6 @@ import {
 
 const QuestionPanel = () => {
    const dispatch = useDispatch();
-   
    return (
       <TestWrapper>
          <Test>
