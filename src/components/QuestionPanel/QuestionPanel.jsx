@@ -8,7 +8,6 @@ import {
    Test,
 } from "./QuestionPanelStyle";
 import MapQuestions from "./MapQuestions/MapQuestions";
-import Start from "../StartTest/Start";
 import { useDispatch } from "react-redux";
 import {
    nextTest,
@@ -17,6 +16,7 @@ import {
 
 const QuestionPanel = () => {
    const dispatch = useDispatch();
+   
    return (
       <TestWrapper>
          <Test>
