@@ -1,15 +1,18 @@
 import React from "react";
 import { StartContent, Content, TestTitle, StartBtn } from "./StartStyle";
 import { ImPlay2 } from "react-icons/im";
+import { Link } from "react-router-dom";
 
-const Start = ({ clicked, Clicking }) => {
+const Start = () => {
   return (
     <StartContent>
       <Content>
         <TestTitle>Click a button and Start Test </TestTitle>
-        <StartBtn onClick={() => Clicking(!clicked)}>
-          <ImPlay2 /> Start
-        </StartBtn>
+        <Link>
+          <StartBtn>
+            <ImPlay2 /> Start
+          </StartBtn>
+        </Link>
       </Content>
     </StartContent>
   );
