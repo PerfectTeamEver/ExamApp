@@ -1,10 +1,7 @@
 import React from "react";
 import { MapContainer, MapContent, Select, TestNum } from "./MapResultStyle";
 import { useDispatch, useSelector } from "react-redux";
-import {
-   changeTestNumber,
-   getTests,
-} from "../../../store/questions/questions-slice";
+import { getTests, changeTestNumber } from './../../../../store/questions/questions-slice';
 
 const MapResult = () => {
    const { tests, toggleTest } = useSelector(getTests);
