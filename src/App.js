@@ -7,8 +7,10 @@ import { fetchAsyncTests, getTests } from "./store/questions/questions-slice";
 import { Loading } from "./App.style";
 import "./styles/GlobalStyle.css";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
-import CreatedTests from "./components/AdminPanel/CreatedTests/CreatedTests";
 import Start from "./components/StartTest/Start";
+import Home from "./components/Home/Home";
+import CreateTest from "./components/AdminPanel/CreateTest/CreateTest";
+import MyTests from "./components/AdminPanel/MyTests/MyTests";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,12 +21,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route exact path="/" element={<AdminPanel />} /> */}
-        {/* <Route exact path="/createdTests" element={<CreatedTests />} /> */}
-        <Route exact path="/" element={<Start />} />
-        {/* <Route
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/admin" element={<AdminPanel />} />
+        <Route exact path="/admin/my-tests" element={<MyTests />} />
+        <Route exact path="/admin/create-test" element={<CreateTest />} />
+
+        <Route exact path="/exam" element={<Start />} />
+        <Route
           exact
-          path="/"
+          path="/exam/quiz"
           element={
             isDataFetched ? (
               <QuestionPanel />
@@ -34,7 +39,7 @@ function App() {
               </Loading>
             )
           }
-        /> */}
+        />
         <Route path="/results" element={<ResultsPanel />} />
       </Routes>
     </BrowserRouter>
