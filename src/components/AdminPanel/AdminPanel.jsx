@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Btn from "../Btn";
+import { BtnsWrapper, Btns } from "./AdminPanel.style";
 
 const AdminPanel = () => {
   return (
-    <div>
-      <div>
+    <BtnsWrapper>
+      <Btns>
         <Link to="/admin/create-test">
-          <button>Create test</button>
+          <Btn name="Create test" />
         </Link>
-      </div>
-      <div>
         <Link to="/admin/my-tests">
-          <button>My tests</button>
+          <Btn name="My test" />
         </Link>
-      </div>
-    </div>
-  )
-}
+      </Btns>
+    </BtnsWrapper>
+  );
+};
 
-export default AdminPanel
+export default AdminPanel;

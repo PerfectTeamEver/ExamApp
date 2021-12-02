@@ -1,21 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Home.style";
+import Btn from "../Btn";
+import { Wrapper, Btns } from "./Home.style";
 
 const Home = () => {
   return (
-    <div>
-      <div>
+    <Wrapper>
+      <Btns>
         <Link to="/admin">
-          <Button>ADMIN</Button>
+          <Btn size="28px" name="ADMIN" bg="#303030" />
         </Link>
-      </div>
-      <div>
         <Link to="/exam">
-          <Button>EXAM</Button>
+          <Btn size="28px" name="Exam" bg="#303030" />
         </Link>
-      </div>
-    </div>
+      </Btns>
+    </Wrapper>
   );
 };
 
