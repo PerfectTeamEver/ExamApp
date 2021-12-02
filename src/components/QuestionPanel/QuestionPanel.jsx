@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Question from "./Question/Question";
 import {
    Controls,
@@ -10,13 +10,16 @@ import {
 import MapQuestions from "./MapQuestions/MapQuestions";
 import { useDispatch } from "react-redux";
 import {
+   fetchAsyncTests,
    nextTest,
    prevTest,
 } from "./../../store/questions/questions-slice";
 
 const QuestionPanel = () => {
    const dispatch = useDispatch();
-   
+   useEffect(() => {
+      dispatch(fetchAsyncTests());
+   }, [dispatch]);
    return (
       <TestWrapper>
          <Test>
