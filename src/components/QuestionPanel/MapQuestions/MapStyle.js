@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../Sizes";
 
 export const MapContainer = styled.div`
   background-color: #303030;
@@ -10,6 +11,10 @@ export const MapContainer = styled.div`
   align-items: center;
   a {
     text-decoration: none;
+  }
+
+  @media ${device.tablet} {
+    margin-top: 30px;
   }
 `;
 
