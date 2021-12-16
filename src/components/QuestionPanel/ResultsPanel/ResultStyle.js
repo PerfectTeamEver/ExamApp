@@ -1,16 +1,27 @@
 import styled from "styled-components";
+import { device } from "../../../Sizes";
 
 export const ResultWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
+`;
+
+export const Score = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  width: 100%;
+  
   p {
+    width: 50%;
+    text-align: center;
     margin-bottom: 30px;
-    height: max-content;
-    padding: 100px;
+    padding: 100px 50px;
     font-size: 30px;
     background-color: #303030;
     color: #fff;
@@ -20,8 +31,23 @@ export const ResultWrapper = styled.div`
       font-size: 35px;
       font-weight: bold;
     }
+
+    @media ${device.laptop}{
+      width: 60%;
+    }
+
+    @media ${device.tablet}{
+      width: 85%;
+    padding: 90px 25px;
+
+    }
+
+    @media ${device.mobileL}{
+      width: 90%;
+      padding: 70px 20px;
+    }
   }
-`;
+`
 
 export const ResultBtn = styled.div`
   user-select: none;
@@ -51,16 +77,24 @@ export const ResultContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100%; */
   width: 100%;
+  padding: 50px 0;
 `;
 
 export const Content = styled.div`
   width: 100%;
   display: flex;
+  gap: 30px;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: 0 4%;
+
+  @media ${device.tablet}{
+    flex-direction: column;
+    align-items: center;
+  }
+
 `;
 
 export const Wrapper = styled.div`
@@ -69,6 +103,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media ${device.tablet}{
+    width: 100%;
+  }
 `;
 
 export const TestWrapper = styled.div`
@@ -81,6 +119,10 @@ export const TestWrapper = styled.div`
   padding: 50px;
   box-shadow: 0 0 10px #303030;
   position: relative;
+
+  @media ${device.laptop}{
+    padding: 70px 20px 20px;
+  }
 `;
 
 export const ResultScore = styled.div`
@@ -99,29 +141,6 @@ export const ResultScore = styled.div`
   }
 `;
 
-export const Map = styled.div`
-  width: 250px;
-  background-color: #303030;
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(4, auto);
-  padding: 30px;
-  gap: 20px;
-  box-shadow: 0 0 10px #303030;
-  border-radius: 10px;
-`;
-
-export const TestNum = styled.div`
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  border-radius: 100%;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
 
 export const Controls = styled.div`
   width: 100%;

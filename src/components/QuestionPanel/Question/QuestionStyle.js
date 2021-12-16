@@ -28,6 +28,7 @@ export const CardContent = styled.div`
       color: coral;
     }
   }
+  
 `;
 
 export const QuestionText = styled.div`
@@ -40,7 +41,7 @@ export const Answers = styled.div`
   gap: 30px;
   margin-top: 50px;
 
-  @media ${device.tablet} {
+  @media ${device.meddle} {
     grid-template: repeat(2, 1fr) / 1fr;
   }
 `;

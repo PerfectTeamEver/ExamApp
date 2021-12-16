@@ -5,7 +5,6 @@ import { getTests, changeTestNumber } from './../../../../store/questions/questi
 
 const MapResult = () => {
    const { tests, toggleTest } = useSelector(getTests);
-   debugger
    const dispatch = useDispatch();
    return (
       <MapContainer>

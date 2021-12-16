@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../../../Sizes"
 
 export const StartContent = styled.div`
   width: 100vw;
@@ -9,15 +10,30 @@ export const StartContent = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 50px 100px;
+  width: 50%;
+  padding: 50px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background-color: #303030;
   color: #fff;
   box-shadow: 0 0 10px #000;
   a {
     text-decoration: none;
+  }
+
+  @media ${device.laptop}{
+    width :60%; 
+  }
+  
+  @media ${device.tablet}{
+    width :80%; 
+  }
+
+  @media ${device.mobileL}{
+    width :90%; 
+    padding: 40px 20px;
   }
 `;
 

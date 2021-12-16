@@ -19,7 +19,7 @@ const initialState = {
 export const fetchAsyncTests = createAsyncThunk(
    "tests/fetchAsyncTests",
    async () => {
-      const data = await Axios.get("?amount=7");
+      const data = await Axios.get("?amount=15");
       return data.data.results.map((item) => ({
          ...item,
          selectedAnswer: null,

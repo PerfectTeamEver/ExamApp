@@ -24,6 +24,12 @@ export const MapContent = styled.div`
   grid-template-columns: repeat(4, auto);
   gap: 20px;
   box-shadow: 0 0 10px #303030;
+
+  @media ${device.tablet} {
+    /* grid-template-columns: repeat(10, auto); */
+    display:flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Select = styled.div`
@@ -43,6 +49,11 @@ export const TestNum = styled.div`
   justify-content: center;
   cursor: pointer;
   background-color: ${(props) => (props.isAnswerSelected ? "coral" : "white")};
+
+  @media ${device.tablet} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const StopTest = styled.button`
