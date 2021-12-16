@@ -1,11 +1,22 @@
 import styled from "styled-components";
+import {device} from '../../../Sizes'
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+
+  @media ${device.tablet}{
+    padding: 40px 0;
+  }
+
+  @media ${device.mobileL}{
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+  }
 `;
 export const Wrapper = styled.div`
   position: relative;
@@ -20,6 +31,19 @@ export const Wrapper = styled.div`
   padding: 50px 100px 70px;
   border-radius: 7px;
   box-shadow: 0 0 10px #303030;
+
+  @media ${device.laptop}{
+    width: 80%;
+    padding: 50px 50px 70px;
+  }
+
+  @media ${device.tablet}{
+    width: 90%;
+  }
+
+  @media ${device.mobileL}{
+    padding: 20px 20px 50px;    
+  }
 `;
 
 export const Adding = styled.div`
@@ -54,12 +78,13 @@ export const Option = styled.div`
   margin: 20px 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
 
 export const InputWrapper = styled.div`
-  margin: 0 20px;
+  margin-right: 20px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,6 +115,10 @@ export const Add = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media ${device.mobileL}{
+    right: 15px;
+  }
 `;
 
 export const Validation = styled.div`
@@ -100,7 +129,6 @@ export const Validation = styled.div`
 export const MyTest = styled.button`
   position: absolute;
   left: 50px;
-  margin-bottom: 30px;
   border: none;
   border-radius: 5px;
   padding: 7px 20px;
@@ -111,6 +139,10 @@ export const MyTest = styled.button`
   font-weight: bold;
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media ${device.mobileL}{
+    left: 15px;
   }
 `;
 

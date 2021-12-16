@@ -16,7 +16,7 @@ const MyTests = () => {
         {createdTests.map((test) => (
           <Wrapper>
             <h3>Question: {test.question}</h3>
-            Answers:
+            <h4>Answers:</h4>
             <CorrectAnswer>{test.correct_answer}</CorrectAnswer>
             {test.incorrect_answers.map((answer) => {
               return <p>{answer}</p>;

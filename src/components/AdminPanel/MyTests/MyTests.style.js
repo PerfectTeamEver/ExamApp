@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device, divice } from '../../../Sizes'
 
 export const Container = styled.div`
   width: 100%;
@@ -15,24 +16,44 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 50%;
+  width: 70%;
   background-color: #303030;
   padding: 30px 50px;
   color: #fff;
   margin: 10px 0;
+  box-shadow: 0 0 10px #303030;
+  h4 {
+    margin: 10px 0;
+  }
+
   h3 {
     margin-bottom: 15px;
+    padding: 5px;
+    word-break: break-all;
   }
   p {
     font-size: 18px;
     margin: 5px 0;
     padding: 5px;
+    word-break: break-all;
+  }
+
+  @media ${device.tablet}{
+    width: 80%; 
+    padding: 30px;
+  }
+
+  @media ${device.mobileL}{
+    width: 90%; 
+    padding: 20px;
   }
 `;
 
-export const CorrectAnswer = styled.p`
+export const CorrectAnswer = styled.div`
   background-color: #7cfc00;
   color: #000;
+  padding: 5px;
+  word-break: break-all;
 `;
 
 export const Back = styled.button`
