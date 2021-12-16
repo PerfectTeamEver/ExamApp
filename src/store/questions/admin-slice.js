@@ -2,11 +2,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
    createdTests: [],
+
    currentCreatingTest: {},
    currentTest: {
       answers: [],
       correct_answer: "",
    },
+   testsSet: [
+      // {
+      //    testsNa me: "",
+      //    tests: [],
+      // },
+      // {
+      //    testsName: "",
+      //    tests: [],
+      // },
+      // {
+      //    testsName: "",
+      //    tests: [],
+      // },
+   ],
 };
 
 const createdTestsSlice = createSlice({
@@ -40,6 +55,9 @@ const createdTestsSlice = createSlice({
          state.createdTests.push(test);
          console.log(test);
       },
+      addCreatedTestsToSet() {
+         
+      }
    },
 });
 export const { saveCreatedTest } = createdTestsSlice.actions;

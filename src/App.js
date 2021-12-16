@@ -18,11 +18,11 @@ function App() {
       <BrowserRouter>
          <Routes>
             <Route exact path="/" element={<Home />} />
-
+{/* Admin zone */}
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="/admin/my-tests" element={<MyTests />} />
             <Route path="/admin/create-test" element={<CreateTest />} />
-
+{/* Exam zone */}
             <Route path="/exam" element={<Start />} />
             <Route path="/exam/quiz"element={isDataFetched?(<QuestionPanel/>):(<Loading><p>Loading...</p></Loading>)}/>
             <Route path="/exam/results" element={<ResultsPanel />} />
