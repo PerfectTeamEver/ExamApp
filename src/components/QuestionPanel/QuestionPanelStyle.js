@@ -20,10 +20,7 @@ export const TestWrapper = styled.div`
 
 export const Test = styled.div`
   display: flex;
-<<<<<<< HEAD
-=======
   gap: 30px;
->>>>>>> c257537d55d457e351af01754d75ef66f32c9e26
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
