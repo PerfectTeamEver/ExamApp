@@ -49,7 +49,7 @@ const createdTestsSlice = createSlice({
          }
          state.createdTests.push(test);
          console.log(test);
-      },
+      }, 
       saveTestSet: (state, { payload }) => {
          state.testSet.push({
             title: payload.title,
