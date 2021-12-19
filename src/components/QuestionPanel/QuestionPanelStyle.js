@@ -1,19 +1,42 @@
 import styled from "styled-components";
+import { device } from "../../Sizes";
 
 export const TestWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   height: 100vh;
   width: 100vw;
-  padding: 0 5%;
+=======
+  /* height: 100vh; */
+  width: 100%;
+>>>>>>> c257537d55d457e351af01754d75ef66f32c9e26
+  padding: 5% 5%;
+
+  @media ${device.laptop} {
+    padding: 30px;
+  }
+
+  @media ${device.tablet} {
+    height: auto;
+  }
 `;
 
 export const Test = styled.div`
   display: flex;
+<<<<<<< HEAD
+=======
+  gap: 30px;
+>>>>>>> c257537d55d457e351af01754d75ef66f32c9e26
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -21,7 +44,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 75%;
+  width: 70%;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 export const Controls = styled.div`

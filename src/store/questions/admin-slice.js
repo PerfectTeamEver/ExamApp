@@ -1,26 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   createdTests: [],
-
-   currentCreatingTest: {},
-   currentTest: {
-      answers: [],
-      correct_answer: "",
+   currentCreatingTest: {
+      // question: "",
+      // correct_answer: "",
+      // incorrect_answers: [],
+      // id: "",
    },
-   testsSet: [
+   createdTests: [],
+   testSet: [
       // {
-      //    testsNa me: "",
+      //    title: "",
+      //    subject: "",
+      //    type: "",
       //    tests: [],
       // },
-      // {
-      //    testsName: "",
-      //    tests: [],
-      // },
-      // {
-      //    testsName: "",
-      //    tests: [],
-      // },
+      // ...
    ],
 };
 
@@ -55,11 +50,18 @@ const createdTestsSlice = createSlice({
          state.createdTests.push(test);
          console.log(test);
       },
-      addCreatedTestsToSet() {
-         
-      }
+      saveTestSet: (state, { payload }) => {
+         state.testSet.push({
+            title: payload.title,
+            subject: payload.subject,
+            type: payload.type,
+            tests: state.createdTests,
+         });
+         state.createdTests = [];
+         state.currentCreatingTest = {};
+      },
    },
 });
-export const { saveCreatedTest } = createdTestsSlice.actions;
+export const { saveCreatedTest, saveTestSet } = createdTestsSlice.actions;
 export const getCreatedTests = (state) => state.createdTests;
 export default createdTestsSlice.reducer;

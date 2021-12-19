@@ -1,25 +1,41 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getCreatedTests } from "../../../store/questions/admin-slice";
-import { Back } from "./MyTests.style";
+import {
+   getCreatedTests,
+   saveTestSet,
+} from "../../../store/questions/admin-slice";
+import { Container, Back, Wrapper, CorrectAnswer } from "./MyTests.style";
+import { Button } from "@mui/material";
 
-const MyTests = () => {
+const MyTests = ({ subject, title, testType }) => {
    const { createdTests } = useSelector(getCreatedTests);
+   const dispatch = useDispatch();
+
    return (
       <div>
-         <div>
-            <Link to="/admin">
-               <Back>Back</Back>
-            </Link>
-         </div>
-         <h1>Created Tests</h1>
-         <div>
-            <h1>Question:</h1>
+         <Link to="/admin">
+            <Back>Back</Back>
+         </Link>
+         <Container>
+            <h1>Created Tests</h1>
             {createdTests.map((test) => (
-               <h2>{test.question}</h2>
+               <Wrapper>
+                  <h3>Question: {test.question}</h3>
+                  Answers:
+                  <CorrectAnswer>{test.correct_answer}</CorrectAnswer>
+                  {test.incorrect_answers.map((answer) => (
+                     <p>{answer}</p>
+                  ))}
+               </Wrapper>
             ))}
-         </div>
+         </Container>
+         <Button
+            onClick={() => dispatch(saveTestSet({ subject, title, testType }))}
+            variant="contained"
+         >
+            save test
+         </Button>
       </div>
    );
 };

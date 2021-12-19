@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../Sizes";
 
 export const TestContainer = styled.div`
   width: 100%;
@@ -8,6 +9,14 @@ export const TestContainer = styled.div`
   border-radius: 10px;
   min-height: 400px;
   box-shadow: 0 0 15px #303030;
+
+  @media ${device.laptop} {
+    padding: 30px 30px 40px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 30px 20px 40px;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -19,6 +28,7 @@ export const CardContent = styled.div`
       color: coral;
     }
   }
+  
 `;
 
 export const QuestionText = styled.div`
@@ -30,6 +40,10 @@ export const Answers = styled.div`
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   gap: 30px;
   margin-top: 50px;
+
+  @media ${device.meddle} {
+    grid-template: repeat(2, 1fr) / 1fr;
+  }
 `;
 
 export const Option = styled.div`

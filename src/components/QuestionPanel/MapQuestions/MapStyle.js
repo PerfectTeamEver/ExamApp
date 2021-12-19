@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../Sizes";
 
 export const MapContainer = styled.div`
   background-color: #303030;
@@ -11,6 +12,10 @@ export const MapContainer = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media ${device.tablet} {
+    margin-top: 30px;
+  }
 `;
 
 export const MapContent = styled.div`
@@ -19,6 +24,12 @@ export const MapContent = styled.div`
   grid-template-columns: repeat(4, auto);
   gap: 20px;
   box-shadow: 0 0 10px #303030;
+
+  @media ${device.tablet} {
+    /* grid-template-columns: repeat(10, auto); */
+    display:flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Select = styled.div`
@@ -38,6 +49,11 @@ export const TestNum = styled.div`
   justify-content: center;
   cursor: pointer;
   background-color: ${(props) => (props.isAnswerSelected ? "coral" : "white")};
+
+  @media ${device.tablet} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const StopTest = styled.button`
