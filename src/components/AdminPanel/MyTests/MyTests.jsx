@@ -1,17 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-   getCreatedTests,
-   saveTestSet,
-} from "../../../store/questions/admin-slice";
+import { getCreatedTests } from "../../../store/questions/admin-slice";
 import { Container, Back, Wrapper, CorrectAnswer } from "./MyTests.style";
-import { Button } from "@mui/material";
 
-const MyTests = ({ subject, title, testType }) => {
+const MyTests = () => {
    const { testSet } = useSelector(getCreatedTests);
-   debugger;
-   const dispatch = useDispatch();
 
    return (
       <div>
@@ -31,12 +25,6 @@ const MyTests = ({ subject, title, testType }) => {
                </Wrapper>
             ))} */}
          </Container>
-         <Button
-            onClick={() => dispatch(saveTestSet({ subject, title, testType }))}
-            variant="contained"
-         >
-            save test
-         </Button>
       </div>
    );
 };
