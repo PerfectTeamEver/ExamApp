@@ -5,13 +5,8 @@ export const TestWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  height: 100vh;
-  width: 100vw;
-=======
   /* height: 100vh; */
   width: 100%;
->>>>>>> c257537d55d457e351af01754d75ef66f32c9e26
   padding: 5% 5%;
 
   @media ${device.laptop} {
@@ -25,10 +20,7 @@ export const TestWrapper = styled.div`
 
 export const Test = styled.div`
   display: flex;
-<<<<<<< HEAD
-=======
   gap: 30px;
->>>>>>> c257537d55d457e351af01754d75ef66f32c9e26
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
