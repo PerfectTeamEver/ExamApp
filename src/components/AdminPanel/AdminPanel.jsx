@@ -10,7 +10,7 @@ const AdminPanel = () => {
             <Link to="/">
                <Btn name="back" />
             </Link>
-            <Link to="/admin/creating-test">
+            <Link to="/admin/create-test">
                <Btn name="Create test" />
             </Link>
             <Link to="/admin/my-tests">

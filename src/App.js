@@ -5,7 +5,6 @@ import { getTests } from "./store/questions/questions-slice";
 import Home from "./components/Home/Home";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import MyTests from "./components/AdminPanel/MyTests/MyTests";
-import CreateTest from "./components/AdminPanel/CreateTest/CreateTest";
 import QuestionPanel from "./components/QuestionPanel/QuestionPanel";
 import ResultsPanel from "./components/QuestionPanel/ResultsPanel/ResultsPanel";
 import Start from "./components/QuestionPanel/StartTest/Start";
@@ -22,7 +21,7 @@ function App() {
 
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/admin/my-tests" element={<MyTests />} />
-        <Route path="/admin/creating-test" element={<DescribeCreatingTest />} />
+        <Route path="/admin/create-test" element={<DescribeCreatingTest />} />
 
 
         <Route path="/exam" element={<Start />} />

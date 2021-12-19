@@ -18,6 +18,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { saveCreatedTest } from "../../../store/questions/admin-slice";
 import { Button } from "@mui/material";
+import Options from "./Options";
 
 const CreateTest = () => {
    const {
@@ -31,7 +32,6 @@ const CreateTest = () => {
    const onSubmitForm = (data) => {
       if (!validation()) {
          reset();
-         console.log(data);
          dispatch(saveCreatedTest(data));
       }
    };
@@ -57,25 +57,7 @@ const CreateTest = () => {
                      />
                   </Question>
                   Answers
-                  {[...Array(4)].map((e, i) => (
-                     <Option>
-                        <InputWrapper>
-                           <Input
-                              {...register("option_" + i, {
-                                 required: true,
-                              })}
-                              type="text"
-                           />
-                           {errors["option_" + i] && (
-                              <ErrorText>option must be written</ErrorText>
-                           )}
-                        </InputWrapper>
-                        <Check
-                           {...register("is_correct_" + i)}
-                           type="checkbox"
-                        />
-                     </Option>
-                  ))}
+                  <Options register={register} errors={errors} />
                   {validation() && (
                      <Validation>
                         Only one option must be true answer!

@@ -5,7 +5,43 @@ import { getCreatedTests } from "../../../store/questions/admin-slice";
 import { Container, Back, Wrapper, CorrectAnswer } from "./MyTests.style";
 
 const MyTests = () => {
-   const { testSet } = useSelector(getCreatedTests);
+   // const { testSet } = useSelector(getCreatedTests);
+
+   /**
+    * testSet = 
+    * [
+    *    {
+    *       title: "yak",
+    *       subject: "",
+    *       test: [
+    *          ques: '',
+    *          in_an: [],
+    *          cor_an: "",
+    *          id
+    *       ]
+    *    },
+    * {
+    *       title: "yak",
+    *       subject: "",
+    *       test: [
+    *          ques: '',
+    *          in_an: [],
+    *          cor_an: "",
+    *          id
+    *       ]
+    *    }
+    * {
+    *       title: "yak",
+    *       subject: "",
+    *       test: [
+    *          ques: '',
+    *          in_an: [],
+    *          cor_an: "",
+    *          id
+    *       ]
+    *    }
+    * ]
+    */
 
    return (
       <div>
