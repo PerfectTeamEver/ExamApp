@@ -39,7 +39,6 @@ export default function DescribeCreatingTest() {
                >
                   <MenuItem value={"math"}>Math</MenuItem>
                   <MenuItem value={"physics"}>Physics</MenuItem>
-                  <MenuItem value={"programming"}>Programming</MenuItem>
                </Select>
             </FormControl>
             <TextField

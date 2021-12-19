@@ -31,6 +31,7 @@ const CreateTest = () => {
    const onSubmitForm = (data) => {
       if (!validation()) {
          reset();
+         console.log(data);
          dispatch(saveCreatedTest(data));
       }
    };
