@@ -1,0 +1,9 @@
+.textfield {
+  background-color: #303030;
+  color: #fff !important;
+  border-radius: 5px;
+}
+
+.textfield svg {
+  color: #fff;
+}
