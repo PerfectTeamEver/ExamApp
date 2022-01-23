@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 // MUI
 import {
    TextField,
@@ -10,7 +11,8 @@ import {
    Select,
    Button,
 } from "@mui/material";
-import "./style.css";
+import "./desc.style.css";
+
 // components
 import CreateTest from "../CreateTest/CreateTest";
 import MyTests from "./../MyTests/MyTests";
