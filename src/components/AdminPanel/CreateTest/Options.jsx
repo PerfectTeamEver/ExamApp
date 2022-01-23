@@ -7,7 +7,7 @@ import {
    Option,
 } from "./CreatTest.style";
 
-const Options = ({ errors, register }) => {
+const Options = ({ errors, register }) => (
    [...Array(4)].map((e, i) => (
       <Option>
          <InputWrapper>
@@ -23,7 +23,7 @@ const Options = ({ errors, register }) => {
          </InputWrapper>
          <Check {...register("is_correct_" + i)} type="checkbox" />
       </Option>
-   ));
-};
+   ))
+);
 
 export default Options;
