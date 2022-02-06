@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Login from "../../Login/Login";
 import Btn from "../Btn";
 import { Wrapper, Btns } from "./Home.style";
 
 const Home = () => {
-  return (
+  const [login, setLogin] = useState(false);
+  const Submit = (value) => {
+    value && setLogin(true);
+  };
+
+  return login ? (
     <Wrapper>
       <Btns>
         <Link to="/admin">
@@ -15,6 +21,8 @@ const Home = () => {
         </Link>
       </Btns>
     </Wrapper>
+  ) : (
+    <Login Submit={Submit} />
   );
 };
 
